@@ -1,37 +1,42 @@
 (function (exports) {
+  function test_NoteTakesAnArgument() {
+    var note = new Note('test string');
 
-  function test_NoteInstantiation() {
-    var note = new Note('Test string')
-      
-      assert1.isTrue1(note === 'Test string') 
+    if (note._text !== 'test string') {
+      throw new Error('Test failed: note._text is empty')
+    } else {
+      console.log('Test passed: Note correctly instantiated.')
     }
+  }
+    test_NoteTakesAnArgument();
+  })(this);
 
 
-  // function test_NoteTextReturn() {
-  //   var note = new Note('Another test string');
-     
-  //   assert.isTrue(note.returnText() === 'Another test string', 'Note model: returnText() returns correct text')
-  // }
+(function (exports) {
+  function test_NoteReturnsText() {
+    var note = new Note('My first note');
+
+    if (note.returnText() !== 'My first note') {
+      throw new Error('Test failed. note.returnText() not working')
+    } else {
+      console.log('Test passed. returnText worked.');
+    }
+  }
+
+  test_NoteReturnsText();
+})(this);
 
 
+// (function (exports) {
+//   function testHasID() {
+//     var note = new Note('This is a note', 1);
 
-  test_NoteInstantiation()
-  // test_NoteTextReturn()
+//     if (note.returnID()) {
+//       console.log('Test Passed: Note has an ID')
+//     } else {
+//       throw new Error('Test failed: Note does not have an ID');
+//     }
+//   }
 
-})(this)
-
-
-
-  // (function (exports) {
-  //   function testNoteReturn() {
-  //     var note = new Note("My favorite language is Javascript", 0);
-  //     assert.isTrue(note.noteText() === "My favorite language is Javascript", "Note model: noteText() returns correct text");
-  //   };
-
-  //   function testNumber() {
-  //     var note = new Note("My favorite language is Javascript", 0);
-  //     assert.isTrue(note.noteId() === 0, "Note model: noteId() returns correct id");
-  //   };
-  //   testNoteReturn();
-  //   testNumber();
-  // })(this);
+//   test_NoteHasID();
+// })(this);
