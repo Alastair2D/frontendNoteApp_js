@@ -22,7 +22,6 @@
       console.log('Test passed: returnText returns note text');
     }
   }
-
   test_NoteReturnsText();
 })(this);
 
@@ -37,6 +36,20 @@
       throw new Error('Test failed: Note does not have an ID');
     }
   }
-
   test_NoteHasAnID();
+})(this);
+
+
+(function (exports) {
+  function test_NoteReturn() {
+    var note = new Note("My favorite language is Javascript", 0);
+    assert.isTrue(note.returnText() === "My favorite language is Javascript", "Note model: noteText() returns correct text");
+  };
+
+  function test_NoteID() {
+    var note = new Note("My favorite language is Javascript", 0);
+    assertE.isTrue(note.returnID() === 0, "Note model: noteId() returns correct id");
+  };
+  test_NoteReturn();
+  test_NoteID();
 })(this);
