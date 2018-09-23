@@ -5,7 +5,7 @@
     if (note._text !== 'test string') {
       throw new Error('Test failed: note._text is empty')
     } else {
-      console.log('Test passed: Note correctly instantiated.')
+      console.log('Test passed: Note correctly instantiated')
     }
   }
     test_NoteTakesAnArgument();
@@ -19,7 +19,7 @@
     if (note.returnText() !== 'My first note') {
       throw new Error('Test failed. note.returnText() not working')
     } else {
-      console.log('Test passed. returnText worked.');
+      console.log('Test passed: returnText returns note text');
     }
   }
 
@@ -27,16 +27,16 @@
 })(this);
 
 
-// (function (exports) {
-//   function testHasID() {
-//     var note = new Note('This is a note', 1);
+(function (exports) {
+  function test_NoteHasAnID() {
+    var note = new Note('This is a note', 1);
 
-//     if (note.returnID()) {
-//       console.log('Test Passed: Note has an ID')
-//     } else {
-//       throw new Error('Test failed: Note does not have an ID');
-//     }
-//   }
+    if (note.returnID()) {
+      console.log('Test passed: Note has an ID')
+    } else {
+      throw new Error('Test failed: Note does not have an ID');
+    }
+  }
 
-//   test_NoteHasID();
-// })(this);
+  test_NoteHasAnID();
+})(this);
